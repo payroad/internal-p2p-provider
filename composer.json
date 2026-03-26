@@ -1,0 +1,21 @@
+{
+    "name": "payroad/internal-p2p-provider",
+    "description": "Internal (mock) P2P payment provider for Payroad — for demo and testing",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "payroad/payroad-core": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Payroad\\Provider\\InternalP2P\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../payroad-core"
+        }
+    ]
+}
