@@ -56,7 +56,7 @@ final class InternalP2PProvider implements P2PProviderInterface
 
         $attempt = P2PPaymentAttempt::create($id, $paymentId, $providerName, $amount, $data);
         $attempt->setProviderReference('p2p_' . $id->value);
-        $attempt->applyTransition(AttemptStatus::AWAITING_CONFIRMATION, 'transfer_instructions_issued');
+        $attempt->markAwaitingConfirmation('transfer_instructions_issued');
 
         return $attempt;
     }
@@ -75,7 +75,7 @@ final class InternalP2PProvider implements P2PProviderInterface
 
         $refund = P2PRefund::create($id, $paymentId, $originalAttemptId, $providerName, $amount, $data);
         $refund->setProviderReference($returnRef);
-        $refund->applyTransition(RefundStatus::SUCCEEDED, 'mock_refund_completed');
+        $refund->markSucceeded('mock_refund_completed');
 
         return $refund;
     }
