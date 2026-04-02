@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Payroad\Provider\InternalP2P\Data;
 
-use Payroad\Domain\PaymentFlow\P2P\P2PAttemptData;
+use Payroad\Domain\Channel\P2P\P2PAttemptData;
 
 final class InternalP2PAttemptData implements P2PAttemptData
 {
